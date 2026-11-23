@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Strong Bonds Resilience, Inc. — El Paso</title>
+<meta name="description" content="Strong Bonds Resilience, Inc. is the nonprofit heart of Strong Bonds in El Paso — transitional housing, peer support, and community for veterans, students, and survivors." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fdf5e6;
+    --cream-2:#fffaf0;
+    --paper:#ffffff;
+    --ink:#2c1b14;
+    --ink-soft:#5a4638;
+    --gold:#d4af37;
+    --gold-deep:#9a7b1e;
+    --plum:#4e2753;
+    --plum-soft:#efe6f1;
+    --tan:#e8dcc8;
+    --tan-line:#ddd0b8;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(44,27,20,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --cream:#1e1512;
+      --cream-2:#241a16;
+      --paper:#2c201b;
+      --ink:#fdf5e6;
+      --ink-soft:#d8c9b8;
+      --gold:#d4af37;
+      --gold-deep:#e6c65c;
+      --plum:#c9a6d1;
+      --plum-soft:#3a2440;
+      --tan:#3a2d24;
+      --tan-line:#4a3a30;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;font-size:17px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.15;margin:0}
+  a{color:var(--plum)}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .skip{position:fixed;left:12px;top:-80px;background:var(--ink);color:var(--cream);padding:10px 16px;z-index:100;border-radius:0 0 10px 10px;transition:top .15s ease}
+  .skip:focus{top:0}
+
+  /* Status banner — exact nonprofit wording */
+  .status-banner{background:var(--plum);color:#fdf5e6;text-align:center;padding:10px 16px;font-size:.95rem;font-weight:600;letter-spacing:.01em}
+  @media (prefers-color-scheme: dark){ .status-banner{background:#3a2440;color:#fdf5e6} }
+
+  /* Nav */
+  header.site{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--cream) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--tan-line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand-mark{width:42px;height:42px;border-radius:12px;background:var(--plum);color:#fdf5e6;display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:700;font-size:1.05rem;flex:none}
+  @media (prefers-color-scheme: dark){ .brand-mark{color:#1e1512;background:var(--gold)} }
+  .brand-text b{display:block;line-height:1.1;font-size:1.02rem}
+  .brand-text span{display:block;font-size:.8rem;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase}
+  @media (max-width:760px){
+    .brand-mark{width:38px;height:38px;font-size:.95rem}
+    .brand-text b{font-size:.92rem}
+    .brand-text span{font-size:.72rem}
+    .nav-cta{white-space:nowrap}
+  }
+  nav.links{display:flex;gap:4px;flex-wrap:wrap}
+  nav.links a{color:var(--ink);text-decoration:none;font-weight:600;padding:9px 12px;border-radius:999px;font-size:.95rem}
+  nav.links a:hover{background:var(--tan)}
+  .nav-cta{background:var(--ink)!important;color:var(--cream)!important}
+  @media (max-width:760px){ nav.links a:not(.nav-cta){display:none} }
+
+  /* Hero */
+  .hero{padding:56px 0 28px;background:
+    radial-gradient(700px 320px at 85% -60px, rgba(212,175,55,.22), transparent 60%),
+    radial-gradient(600px 300px at -80px 120px, rgba(78,39,83,.10), transparent 60%),
+    var(--cream)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--tan-line);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--plum)}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);font-weight:700;margin:20px 0 16px;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--plum);border-bottom:6px solid rgba(212,175,55,.55)}
+  .hero p.lede{font-size:1.18rem;color:var(--ink-soft);max-width:62ch;margin:0 0 26px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;min-height:48px;border:1px solid transparent}
+  .btn-primary{background:var(--plum);color:#fdf5e6}
+  @media (prefers-color-scheme: dark){ .btn-primary{background:var(--gold);color:#1e1512} }
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--tan-line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:var(--paper);border:1px solid var(--tan-line);border-radius:999px;padding:7px 14px;font-size:.9rem;font-weight:600}
+  .chip b{color:var(--gold-deep)}
+
+  /* Crisis strip */
+  .crisis{margin:26px 0 0;background:var(--paper);border:1px solid var(--tan-line);border-left:6px solid var(--gold);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .crisis h2{font-size:1.15rem;margin-bottom:6px}
+  .crisis p{margin:4px 0;color:var(--ink-soft)}
+  .crisis a{font-weight:700}
+  .crisis .big{font-size:1.25rem;color:var(--ink)}
+
+  section{padding:52px 0}
+  .section-head{max-width:68ch;margin-bottom:28px}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:10px}
+  .section-head p{color:var(--ink-soft);margin:0;font-size:1.05rem}
+  .kicker{font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+
+  /* Engine */
+  .engine{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:820px){ .engine{grid-template-columns:1fr} }
+  .step{background:var(--paper);border:1px solid var(--tan-line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);position:relative}
+  .step .num{width:38px;height:38px;border-radius:50%;background:var(--cream);border:1px solid var(--tan-line);display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:700;color:var(--plum);margin-bottom:14px}
+  .step h3{font-size:1.2rem;margin-bottom:8px}
+  .step p{margin:0;color:var(--ink-soft);font-size:.98rem}
+  .step .tag{display:inline-block;margin-top:14px;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-deep)}
+  .arrow-note{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:16px}
+
+  /* Programs tabs */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .tab{border:1px solid var(--tan-line);background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;min-height:44px}
+  .tab[aria-selected="true"]{background:var(--plum);color:#fdf5e6;border-color:var(--plum)}
+  @media (prefers-color-scheme: dark){ .tab[aria-selected="true"]{background:var(--gold);color:#1e1512;border-color:var(--gold)} }
+  .panel{background:var(--paper);border:1px solid var(--tan-line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px}
+  @media (max-width:820px){ .panel{grid-template-columns:1fr} }
+  .panel h3{font-size:1.55rem;margin-bottom:10px}
+  .panel p{color:var(--ink-soft);margin:0 0 12px}
+  .panel ul{margin:0;padding-left:20px;color:var(--ink-soft)}
+  .panel ul li{margin:6px 0}
+  .panel ul li::marker{color:var(--gold-deep)}
+  .factbox{background:var(--cream-2);border:1px solid var(--tan-line);border-radius:14px;padding:20px;height:fit-content}
+  .factbox h4{margin:0 0 12px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--plum)}
+  .factbox dl{margin:0}
+  .factbox dt{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-top:12px}
+  .factbox dt:first-child{margin-top:0}
+  .factbox dd{margin:2px 0 0;font-weight:600}
+  [hidden]{display:none!important}
+
+  /* Who we serve */
+  .serve{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (max-width:820px){ .serve{grid-template-columns:1fr} }
+  .serve-card{background:var(--paper);border:1px solid var(--tan-line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .serve-card h3{font-size:1.2rem;margin-bottom:8px}
+  .serve-card p{margin:0;color:var(--ink-soft)}
+  .serve-card .icon{font-size:1.4rem;margin-bottom:10px;display:block}
+
+  /* Journal callout */
+  .journal{background:var(--plum);color:#fdf5e6;border-radius:24px;padding:36px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+  @media (max-width:820px){ .journal{grid-template-columns:1fr;padding:28px} }
+  @media (prefers-color-scheme: dark){ .journal{background:#3a2440} }
+  .journal h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px}
+  .journal p{margin:0 0 10px;color:#efe3d3}
+  .journal .btn{background:var(--gold);color:#2c1b14}
+  .journal-card{background:rgba(253,245,230,.08);border:1px solid rgba(253,245,230,.25);border-radius:16px;padding:20px}
+  .journal-card p{font-size:.95rem}
+  .journal-card b{color:var(--gold)}
+
+  /* Partners */
+  .partners{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media (max-width:980px){ .partners{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:540px){ .partners{grid-template-columns:1fr} }
+  .partner{background:var(--paper);border:1px solid var(--tan-line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .partner h3{font-size:1.05rem;margin-bottom:6px}
+  .partner p{margin:0;color:var(--ink-soft);font-size:.93rem}
+
+  /* Founders */
+  .founders{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:820px){ .founders{grid-template-columns:1fr} }
+  .founder{background:var(--paper);border:1px solid var(--tan-line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .founder .role{font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+  .founder h3{font-size:1.35rem;margin:6px 0 10px}
+  .founder p{margin:0;color:var(--ink-soft)}
+
+  /* FAQ */
+  details{background:var(--paper);border:1px solid var(--tan-line);border-radius:14px;padding:6px 20px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer;padding:12px 0;min-height:44px;display:flex;align-items:center}
+  details p{color:var(--ink-soft);margin:0 0 16px}
+
+  footer{border-top:1px solid var(--tan-line);padding:36px 0 48px;background:var(--cream-2)}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer p{color:var(--ink-soft);font-size:.93rem;margin:6px 0;max-width:52ch}
+  footer nav{display:flex;flex-direction:column;gap:6px}
+  footer nav a{padding:4px 0;min-height:32px;display:inline-flex;align-items:center}
+  .fineprint{margin-top:24px;padding-top:16px;border-top:1px solid var(--tan-line);font-size:.85rem;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="status-banner" role="note">501(c)(3) in progress — donations at this time just help, but are not tax deductible</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Strong Bonds Resilience home">
+      <span class="brand-mark" aria-hidden="true">SB</span>
+      <span class="brand-text"><b>Strong Bonds Resilience, Inc.</b><span>El Paso, Texas</span></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#programs">Programs</a>
+      <a href="#who">Who We Serve</a>
+      <a href="#journal">Survivor Journal</a>
+      <a href="#partners">Partners</a>
+      <a class="nav-cta" href="#help">Get Help Now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow">The nonprofit heart of Strong Bonds</span>
+      <h1>Housing to rebuild. <em>Community that stays.</em></h1>
+      <p class="lede">Strong Bonds Resilience, Inc. is building what El Paso survivors, veterans, and students actually need after crisis — a safe place to live, people who understand, and peer support that breaks down the wall between isolation and crisis.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#programs">Explore our programs</a>
+        <a class="btn btn-ghost" href="https://connectionsep.com" target="_blank" rel="noopener">Visit Coffee &amp; Connections →</a>
+      </div>
+      <div class="chips" aria-label="Communities served">
+        <span class="chip"><b>●</b> Fort Bliss &amp; veterans</span>
+        <span class="chip"><b>●</b> UTEP &amp; EPCC students</span>
+        <span class="chip"><b>●</b> Survivors in El Paso</span>
+      </div>
+
+      <div class="crisis" id="help">
+        <h2>If you need help right now</h2>
+        <p class="big">Call or text <a href="tel:988">988</a> — Suicide and Crisis Lifeline, free and confidential, 24/7. Veterans: press 1.</p>
+        <p>RAINN National Sexual Assault Hotline — Text <strong>“HOPE” to 64673</strong>, free, confidential, 24/7.</p>
+        <p>You do not have to tell your story to get help. Silence is a valid choice, and support is here either way.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGINE -->
+  <section aria-labelledby="engine-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How it works</div>
+        <h2 id="engine-h">The café is the engine. Resilience is the mission.</h2>
+        <p>Coffee &amp; Connections El Paso has to be a real company first — a working café people love. What it earns is what allows Strong Bonds Resilience to house people, fund peer support, and stay independent for the long term. We do not want to be a grant baby.</p>
+      </div>
+      <div class="engine">
+        <article class="step">
+          <div class="num" aria-hidden="true">1</div>
+          <h3>Coffee &amp; Connections El Paso</h3>
+          <p>A trauma-informed café in El Paso — open 6 AM to 10 PM — where Fort Bliss service members, veterans, and college students can gather, work, and be around people who get it.</p>
+          <span class="tag">The engine</span>
+        </article>
+        <article class="step">
+          <div class="num" aria-hidden="true">2</div>
+          <h3>Revenue with a purpose</h3>
+          <p>Café revenue and community support flow through the Strong Bonds family of companies to fund the nonprofit’s work — so help does not disappear when a grant cycle ends.</p>
+          <span class="tag">The fuel</span>
+        </article>
+        <article class="step">
+          <div class="num" aria-hidden="true">3</div>
+          <h3>Strong Bonds Resilience, Inc.</h3>
+          <p>Transitional housing, trained peer support, and community programs for people living with PTSD, Military Sexual Trauma, and the effects of Sexual Assault and Domestic Violence.</p>
+          <span class="tag">The mission</span>
+        </article>
+      </div>
+      <p class="arrow-note">One front door: the café is the physical hub — walk in for coffee, find a community, and get connected to support when you are ready.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section aria-labelledby="programs-h" id="programs" style="background:var(--cream-2);border-top:1px solid var(--tan-line);border-bottom:1px solid var(--tan-line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Programs</div>
+        <h2 id="programs-h">Three ways we show up</h2>
+        <p>Built with Icon Builders using 3D-printed construction, and with clinical and community partners across El Paso. Select a program to see how it works.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Programs">
+        <button class="tab" role="tab" id="tab-sarah" aria-controls="panel-sarah" aria-selected="true">Sarah’s Place</button>
+        <button class="tab" role="tab" id="tab-village" aria-controls="panel-village" aria-selected="false">The Veteran Village</button>
+        <button class="tab" role="tab" id="tab-peer" aria-controls="panel-peer" aria-selected="false">Peer Support</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-sarah" aria-labelledby="tab-sarah">
+        <div>
+          <h3>Sarah’s Place</h3>
+          <p>Transitional housing for survivors of Domestic Violence — named for Sarah, the inspiration behind this work. Sarah’s Place gives a survivor and her family 18 to 24 months of stable housing: long enough to heal, work, study, and plan a next chapter without the pressure of a 30-day shelter clock.</p>
+          <p>Safety and privacy come first. Residents are never required to share their story to live here or to receive support.</p>
+          <ul>
+            <li>18–24 month transitional stays</li>
+            <li>Peer support on site, connected through the café hub</li>
+            <li>Resident-controlled privacy — opt out of house systems at any time</li>
+            <li>Built with Icon Builders (3D printing)</li>
+          </ul>
+        </div>
+        <aside class="factbox" aria-label="Sarah's Place at a glance">
+          <h4>At a glance</h4>
+          <dl>
+            <dt>Who</dt><dd>Survivors of Domestic Violence</dd>
+            <dt>Stay</dt><dd>18–24 months</dd>
+            <dt>Model</dt><dd>Transitional housing + peer support</dd>
+            <dt>Status</dt><dd>In development with Icon Builders</dd>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-village" aria-labelledby="tab-village" hidden>
+        <div>
+          <h3>The Veteran Village</h3>
+          <p>Housing for veterans who are unhoused in the El Paso area — built with Icon Builders and community partners including Recker’s Outreach. The Village is designed as a community, not a warehouse: private homes, shared spaces, and direct connection to peer support and services.</p>
+          <p>A veteran should not have to navigate ten different offices to get housed. The Village brings the support to one place.</p>
+          <ul>
+            <li>Private homes in a village community setting</li>
+            <li>Peer support and service connection on site</li>
+            <li>Built for Fort Bliss and El Paso’s veteran community</li>
+            <li>Built with Icon Builders (3D printing)</li>
+          </ul>
+        </div>
+        <aside class="factbox" aria-label="The Veteran Village at a glance">
+          <h4>At a glance</h4>
+          <dl>
+            <dt>Who</dt><dd>Veterans experiencing homelessness</dd>
+            <dt>Model</dt><dd>Village housing + wraparound support</dd>
+            <dt>Partners</dt><dd>Icon Builders, Recker’s Outreach</dd>
+            <dt>Status</dt><dd>In development</dd>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-peer" aria-labelledby="tab-peer" hidden>
+        <div>
+          <h3>Peer Support &amp; Community</h3>
+          <p>Peer groups that break down the wall between isolation and crisis — led by people with lived experience, with all café staff completing Texas Certified Peer Specialist training through Via Hope.</p>
+          <p>Support covers PTSD, Military Sexual Trauma, Sexual Assault, Domestic Violence trauma, and suicide prevention and awareness. No one is ever required to talk about what happened to them.</p>
+          <ul>
+            <li>Peer groups hosted at the café — the SBR Hub</li>
+            <li>Texas Certified Peer Specialist trained staff</li>
+            <li>Partner referrals without re-traumatizing intake — partner staff request support for their client directly</li>
+            <li>Staffed hot phone covers support after café hours</li>
+          </ul>
+        </div>
+        <aside class="factbox" aria-label="Peer support at a glance">
+          <h4>At a glance</h4>
+          <dl>
+            <dt>Who</dt><dd>Veterans, students &amp; survivors</dd>
+            <dt>Focus</dt><dd>PTSD, Military Sexual Trauma, suicide prevention</dd>
+            <dt>Training</dt><dd>Texas Certified Peer Specialist (Via Hope)</dd>
+            <dt>Where</dt><dd>Coffee &amp; Connections El Paso</dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section aria-labelledby="who-h" id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Who we serve</div>
+        <h2 id="who-h">Built for El Paso’s own</h2>
+        <p>Two communities carry a lot and get asked how they are doing the least: the military community around Fort Bliss, and the students at UTEP and EPCC. Check on the strong friends nobody thinks to check on.</p>
+      </div>
+      <div class="serve">
+        <article class="serve-card">
+          <h3>Service members &amp; veterans</h3>
+          <p>Active-duty Soldiers at Fort Bliss, veterans, and military families — including survivors of Military Sexual Trauma — who need housing, peer support, or simply a place where they do not have to explain themselves.</p>
+        </article>
+        <article class="serve-card">
+          <h3>UTEP &amp; EPCC students</h3>
+          <p>College students far from home, student veterans, and young people building their lives in El Paso — with a special focus on getting students ages 14 to 22 thinking about mental health careers and peer support.</p>
+        </article>
+        <article class="serve-card">
+          <h3>Survivors rebuilding</h3>
+          <p>Survivors of Sexual Assault and Domestic Violence who need time, housing, and stability to rebuild — on their own timeline, with no requirement to disclose what happened.</p>
+        </article>
+        <article class="serve-card">
+          <h3>Families &amp; allies</h3>
+          <p>Spouses, parents, battle buddies, and friends who show up for someone else — and who need a community that shows up for them, too.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section aria-labelledby="journal-h" id="journal" style="padding-top:0">
+    <div class="wrap">
+      <div class="journal">
+        <div>
+          <h2 id="journal-h">Survivor Journal: Your Story</h2>
+          <p>When you are ready — and only when you are ready — your story can help someone else feel less alone. Stories are shared by first name and city, reviewed by a person before anything is published, and never published automatically.</p>
+          <p>You can also ask for a story to come down at any time. It is hidden right away.</p>
+          <a class="btn" href="https://connectionsep.com" target="_blank" rel="noopener">Read &amp; share stories at connectionsep.com →</a>
+        </div>
+        <div class="journal-card">
+          <p><b>How review works</b></p>
+          <p>Every submission is read by a reviewer — Marylou, Dawn, or Tony — within 24 hours. Nothing goes live without a human decision.</p>
+          <p><b>Your name, your call</b></p>
+          <p>Share under your first name or an alias. You are never required to name yourself or anyone else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section aria-labelledby="partners-h" id="partners" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Partners</div>
+        <h2 id="partners-h">We do not do this alone</h2>
+        <p>Partner staff can request support for a client directly — no survivor is ever re-traumatized by being asked to retell their story to qualify for help.</p>
+      </div>
+      <div class="partners">
+        <article class="partner"><h3>NAMI El Paso</h3><p>Mental health education, advocacy, and community connection across El Paso.</p></article>
+        <article class="partner"><h3>Emergence Health Network</h3><p>El Paso’s local mental health authority — crisis and behavioral health care for the region.</p></article>
+        <article class="partner"><h3>Rio Vista Behavioral Health</h3><p>Behavioral health care in El Paso, including outpatient programs that fit real life.</p></article>
+        <article class="partner"><h3>Icon Builders</h3><p>3D-printing construction partner building Sarah’s Place and The Veteran Village.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section aria-labelledby="founders-h" style="background:var(--cream-2);border-top:1px solid var(--tan-line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Founders</div>
+        <h2 id="founders-h">Built by people who needed it to exist</h2>
+        <p>In November 2023 at Fort Bliss, a letter and a crisis became a question: what if there had been a place to go? Coffee &amp; Connections — and Strong Bonds Resilience — is the answer the two of them built together.</p>
+      </div>
+      <div class="founders">
+        <article class="founder">
+          <div class="role">Co-Founder</div>
+          <h3>Anthony “Tony” Sorensen</h3>
+          <p>20-year U.S. Army Staff Sergeant, retiring December 1, 2026. Tony’s idea started as a plain coffee shop — a place for Soldiers to gather off post. His own November 2023 crisis, and what followed, is why this work exists at all.</p>
+        </article>
+        <article class="founder">
+          <div class="role">Co-Founder · CMO · Board President</div>
+          <h3>Marylou Culpepper</h3>
+          <p>Veteran and survivor who took a plain coffee-shop idea and tied it to mental health — that is what turned it into a mission. Tony credits Marylou with saving his life. She builds for other survivors so no one has to carry it alone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Questions</div>
+        <h2 id="faq-h">What people ask us</h2>
+      </div>
+      <details>
+        <summary>Is Strong Bonds Resilience a 501(c)(3)?</summary>
+        <p>Strong Bonds Resilience, Inc. is registered, and its 501(c)(3) status is in progress. Until that process is complete, donations just help — they are not tax deductible. We say that plainly on every page rather than imply otherwise.</p>
+      </details>
+      <details>
+        <summary>Can I donate online here?</summary>
+        <p>Not yet — online giving opens once the nonprofit’s bank account is established. In the meantime, the best way to support the mission is through <a href="https://connectionsep.com" target="_blank" rel="noopener">Coffee &amp; Connections</a>, whose work funds this mission.</p>
+      </details>
+      <details>
+        <summary>Do I have to share my story to get help?</summary>
+        <p>No. Never. A survivor is never required to talk about what happened to them — that applies to all trauma, always. Partner staff can also request support for a client directly, so no one has to redo an intake or retell their story to qualify.</p>
+      </details>
+      <details>
+        <summary>When do Sarah’s Place and The Veteran Village open?</summary>
+        <p>Both are in development with Icon Builders. Timelines will be published here as construction and funding milestones are confirmed — we would rather give you a real date than a hopeful one.</p>
+      </details>
+      <details>
+        <summary>Where is the café?</summary>
+        <p>Coffee &amp; Connections El Paso is the café and the physical front door of this mission. Visit <a href="https://connectionsep.com" target="_blank" rel="noopener">connectionsep.com</a> for café news, the Resilience Market, and the Survivor Journal.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <strong>Strong Bonds Resilience, Inc.</strong>
+        <p>The nonprofit of the Strong Bonds family of companies — alongside Coffee &amp; Connections El Paso and Strong Bonds Tech — serving Fort Bliss, veterans, UTEP and EPCC students, and survivors in El Paso, Texas.</p>
+        <p>Need help now? Call or text <a href="tel:988"><strong>988</strong></a> · RAINN: Text “HOPE” to 64673</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#programs">Programs</a>
+        <a href="#who">Who We Serve</a>
+        <a href="#partners">Partners</a>
+        <a href="https://connectionsep.com" target="_blank" rel="noopener">Coffee &amp; Connections →</a>
+      </nav>
+    </div>
+    <div class="fineprint">501(c)(3) in progress — donations at this time just help, but are not tax deductible. · Strong Bonds Resilience, Inc. · El Paso, Texas</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = {};
+  tabs.forEach(function(t){ panels[t.id] = document.getElementById(t.getAttribute('aria-controls')); });
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      panels[t.id].hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var j = null;
+      if(e.key === 'ArrowRight') j = (i+1) % tabs.length;
+      if(e.key === 'ArrowLeft') j = (i-1+tabs.length) % tabs.length;
+      if(j !== null){ e.preventDefault(); tabs[j].focus(); select(tabs[j]); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
